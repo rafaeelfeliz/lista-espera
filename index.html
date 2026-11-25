@@ -3,109 +3,506 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>شرح الشيوخ · Lista de espera</title>
-<meta name="description" content="Series completas con la explicación de los libros clásicos del Islam, en español. Únete a la lista de espera.">
+<title>شرح الشيوخ · Las explicaciones de los grandes sabios, en español</title>
+<meta name="description" content="Las explicaciones completas de los grandes sabios sobre los libros clásicos del Islam, en árabe y en español, libro a libro. Únete a la lista de espera.">
+<meta property="og:title" content="شرح الشيوخ · Explicaciones de los Sabios">
+<meta property="og:description" content="Las explicaciones completas de los grandes sabios, directamente en español. Únete a la lista de espera.">
+<meta property="og:image" content="https://sharhshuyuj.com/img/yt-enfermedad.jpg">
 <link rel="icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --crema:#F5EFE3; --marron:#5C3D2E; --marron-osc:#47301F;
-    --suave:#8A7A6A; --texto:#6E5546; --linea:#E2D6C2; --blanco:#FFFDF9; --tarjeta:#EFE5D3;
+    --crema:#F5EFE3; --crema2:#EFE6D5; --marron:#5C3D2E; --marron-osc:#3E281D; --marron-noche:#2B1C14;
+    --oro:#C9A063; --oro-claro:#E7C98F; --suave:#8A7A6A; --texto:#6E5546; --linea:#E2D6C2; --blanco:#FFFDF9;
+    --verde:#1F4632; --azul:#16304F; --rojo:#7E2424;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{
-    background:var(--crema); color:var(--marron);
-    font-family:Poppins,system-ui,sans-serif;
-    min-height:100vh; min-height:100dvh;
-    display:flex; align-items:center; justify-content:center;
-    padding:20px 18px;
-  }
-  main{width:100%; max-width:440px; text-align:center}
-  .logo{width:130px; height:auto; display:block; margin:0 auto 18px}
-  .marca{font-size:10.5px; letter-spacing:.22em; text-transform:uppercase; color:var(--suave); margin-bottom:18px}
-  h1{font-family:Lora,Georgia,serif; font-weight:600; font-size:32px; line-height:1.2; margin-bottom:8px}
-  .sub{font-size:15px; line-height:1.55; color:var(--texto); margin-bottom:22px}
+  html{scroll-behavior:smooth}
+  body{background:var(--crema); color:var(--marron); font-family:Poppins,system-ui,sans-serif; font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden}
+  img{display:block; max-width:100%}
+  a{color:inherit}
+  .ar{font-family:Amiri,serif; direction:rtl; unicode-bidi:isolate}
+  .wrap{width:100%; max-width:1140px; margin:0 auto; padding:0 22px}
+  .eyebrow{font-size:11.5px; font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:#9A7B5C}
+  h1,h2,h3{font-family:Lora,Georgia,serif; font-weight:600; line-height:1.15; color:var(--marron)}
+  h2{font-size:clamp(28px,4vw,42px); margin:10px 0 14px}
+  .lead{font-size:17px; color:var(--texto); max-width:620px}
+  section{padding:96px 0}
+  .center{text-align:center} .center .lead{margin:0 auto}
+  .btn{display:inline-flex; align-items:center; gap:10px; padding:15px 26px; border-radius:999px; font:600 15px Poppins,sans-serif; text-decoration:none; border:0; cursor:pointer; transition:transform .15s, background .15s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-main{background:var(--marron); color:var(--crema); box-shadow:0 12px 28px -14px rgba(62,40,29,.7)}
+  .btn-main:hover{background:var(--marron-osc)}
+  .btn-line{border:1.5px solid var(--marron); color:var(--marron); background:transparent}
+  .btn-line:hover{background:var(--marron); color:var(--crema)}
 
-  .precio{background:var(--tarjeta); border:1px solid var(--linea); border-radius:14px; padding:14px 18px; margin-bottom:12px}
-  .precio .et{font-size:10.5px; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:#9A7B5C}
-  .precio .grande{font-family:Lora,Georgia,serif; font-weight:600; font-size:22px; margin:4px 0 2px}
-  .precio .peq{font-size:12.5px; color:var(--texto)}
+  /* NAV */
+  nav{position:sticky; top:0; z-index:50; background:rgba(245,239,227,.88); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid transparent; transition:border-color .2s}
+  nav.scrolled{border-color:var(--linea)}
+  nav .wrap{display:flex; align-items:center; justify-content:space-between; height:68px}
+  .brand{display:flex; align-items:center; gap:12px; text-decoration:none}
+  .brand img{width:46px; height:46px; object-fit:contain}
+  .brand span{font-size:12px; letter-spacing:.04em; color:var(--suave); line-height:1.3}
+  .brand b{display:block; font-family:Lora,serif; font-size:15px; letter-spacing:0; text-transform:none; color:var(--marron); font-weight:600}
+  nav .btn{padding:10px 18px; font-size:13.5px}
 
-  form{background:var(--blanco); border:1px solid var(--linea); border-radius:14px; padding:18px; text-align:left;
-       box-shadow:0 10px 30px -18px rgba(92,61,46,.35)}
+  /* HERO */
+  .hero{padding:56px 0 40px; position:relative}
+  .hero::before{content:""; position:absolute; inset:0; background:radial-gradient(60% 55% at 78% 40%, rgba(201,160,99,.22), transparent 70%); pointer-events:none}
+  .hero .wrap{display:grid; grid-template-columns:1.02fr 1fr; gap:40px; align-items:center; position:relative}
+  .hero h1{font-size:clamp(36px,5.2vw,60px); margin:14px 0 18px; letter-spacing:-.01em}
+  .hero h1 em{font-style:italic; color:#9A6B3E}
+  .hero .lead{font-size:18px; margin-bottom:28px}
+  .hero-ctas{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
+  .proof{display:flex; gap:18px; margin-top:28px; flex-wrap:wrap; font-size:13.5px; color:var(--texto)}
+  .proof div{display:flex; align-items:center; gap:8px}
+  .proof i{width:22px; height:22px; border-radius:50%; background:var(--marron); color:var(--crema); display:grid; place-items:center; font-style:normal; font-size:12px}
+
+  /* BOOK RENDER */
+  .shelf{position:relative; height:520px; perspective:1700px}
+  .shelf .bk{position:absolute; top:50%; left:50%; width:210px; aspect-ratio:520/732; transform-style:preserve-3d; transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+  .bk img{width:100%; height:100%; object-fit:cover; border-radius:2px 5px 5px 2px; box-shadow:0 30px 50px -22px rgba(43,28,20,.75), 0 6px 14px -6px rgba(43,28,20,.45)}
+  .bk::before{content:""; position:absolute; inset:0; border-radius:2px 5px 5px 2px; background:linear-gradient(90deg, rgba(0,0,0,.35) 0, rgba(255,255,255,.18) 2.5%, rgba(0,0,0,.12) 5%, transparent 9%, transparent 85%, rgba(255,255,255,.08) 100%); z-index:2; pointer-events:none}
+  .bk::after{content:""; position:absolute; top:1.5%; right:-7px; width:8px; height:97%; background:repeating-linear-gradient(90deg,#f4ecdc 0 1px,#d9ccb3 1px 2px); transform:rotateY(80deg); transform-origin:left; border-radius:0 2px 2px 0}
+  .b1{transform:translate(-50%,-50%) translateX(-190px) translateY(18px) rotateY(32deg) rotateZ(-2deg) scale(.82); z-index:1}
+  .b2{transform:translate(-50%,-50%) translateX(-100px) translateY(4px) rotateY(24deg) scale(.92); z-index:2}
+  .b3{transform:translate(-50%,-50%) translateY(-8px) scale(1.04); z-index:4}
+  .b4{transform:translate(-50%,-50%) translateX(100px) translateY(4px) rotateY(-24deg) scale(.92); z-index:3}
+  .b5{transform:translate(-50%,-50%) translateX(190px) translateY(18px) rotateY(-32deg) rotateZ(2deg) scale(.82); z-index:2}
+  .shelf::after{content:""; position:absolute; left:8%; right:8%; bottom:38px; height:40px; background:radial-gradient(50% 50% at 50% 50%, rgba(43,28,20,.32), transparent 75%); filter:blur(6px); z-index:0}
+  .tag{position:absolute; z-index:6; background:var(--blanco); border:1px solid var(--linea); border-radius:14px; padding:10px 14px; box-shadow:0 18px 36px -20px rgba(62,40,29,.55); font-size:12.5px; line-height:1.35; color:var(--texto)}
+  .tag b{display:block; color:var(--marron); font-size:13.5px}
+  .tag.t1{left:0; top:56px} .tag.t2{right:0; bottom:62px}
+  .tag .ar{font-size:18px; color:var(--marron)}
+
+  /* SCHOLARS STRIP */
+  .strip{background:var(--marron); color:var(--crema); padding:22px 0}
+  .strip .wrap{display:flex; align-items:center; justify-content:center; gap:14px 34px; flex-wrap:wrap; font-size:14px}
+  .strip .lbl{color:var(--oro-claro); letter-spacing:.18em; font-size:11px; text-transform:uppercase; font-weight:600}
+  .strip .n{font-family:Lora,serif; font-size:17px}
+  .strip .dot{width:4px; height:4px; border-radius:50%; background:var(--oro)}
+
+  /* WHAT */
+  .what .wrap{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center}
+  .what p{color:var(--texto); margin-bottom:14px}
+  .what p strong{color:var(--marron)}
+  .quote{position:relative; background:var(--blanco); border:1px solid var(--linea); border-radius:22px; padding:38px 34px; box-shadow:0 30px 60px -40px rgba(62,40,29,.5)}
+  .quote .ar{font-size:30px; line-height:1.7; color:var(--marron); text-align:center}
+  .quote .es{font-family:Lora,serif; font-style:italic; font-size:19px; text-align:center; color:var(--texto); margin-top:14px}
+  .quote .src{text-align:center; font-size:12.5px; color:var(--suave); margin-top:12px; letter-spacing:.04em}
+  .quote hr{width:46px; border:0; border-top:2px solid var(--oro); margin:18px auto}
+
+  /* FEATURES */
+  .features{background:var(--crema2)}
+  .grid4{display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:48px}
+  .card{background:var(--blanco); border:1px solid var(--linea); border-radius:18px; padding:26px 22px}
+  .ico{width:46px; height:46px; border-radius:12px; background:var(--marron); color:var(--oro-claro); display:grid; place-items:center; margin-bottom:16px}
+  .ico svg{width:24px; height:24px}
+  .card h3{font-size:19px; margin-bottom:8px}
+  .card p{font-size:14.5px; color:var(--texto); line-height:1.55}
+  .sample{margin-top:56px; display:grid; grid-template-columns:1.35fr 1fr; gap:40px; align-items:center}
+  .sample img{border-radius:16px; box-shadow:0 40px 70px -40px rgba(43,28,20,.7)}
+  .sample h3{font-size:26px; margin-bottom:10px}
+  .sample p{color:var(--texto); margin-bottom:10px}
+  .sample ul{list-style:none; margin-top:14px}
+  .sample li{padding-left:28px; position:relative; margin-bottom:8px; color:var(--texto); font-size:15px}
+  .sample li::before{content:"✓"; position:absolute; left:0; top:0; color:var(--marron); font-weight:600}
+
+  /* CURRICULUM */
+  .levels{margin-top:52px; display:grid; gap:26px}
+  .level{background:var(--blanco); border:1px solid var(--linea); border-radius:24px; padding:30px 34px 34px; display:grid; grid-template-columns:1fr; gap:24px}
+  .lv-head{display:flex; align-items:center; gap:22px; padding-bottom:22px; border-bottom:1px solid var(--linea)}
+  .lv-head h3{margin:0 0 2px!important}
+  .lv-head .num{font-family:Lora,serif; font-size:56px; line-height:1; color:var(--oro)}
+  .lv-head h3{font-size:24px; margin:8px 0 8px}
+  .lv-head p{font-size:14.5px; color:var(--texto)}
+  .books{display:grid; grid-template-columns:repeat(3,1fr); gap:26px}
+  .book{display:flex; gap:14px; align-items:flex-start; padding:4px}
+  .book img{width:104px; flex:none; border-radius:2px 4px 4px 2px; box-shadow:0 14px 22px -12px rgba(43,28,20,.7)}
+  .book h4{font-family:Lora,serif; font-size:17px; line-height:1.25; color:var(--marron); font-weight:600}
+  .book .ar{font-size:17px; color:#9A6B3E; display:block; margin:2px 0 4px; text-align:left; direction:rtl}
+  .book .au{font-size:12px; color:var(--suave); margin-bottom:6px}
+  .book p{font-size:13.5px; line-height:1.5; color:var(--texto)}
+  .pill{display:inline-block; font-size:11px; font-weight:600; letter-spacing:.04em; padding:4px 10px; border-radius:999px; margin-top:8px; white-space:nowrap}
+  .pill.free{background:var(--verde); color:#fff}
+  .pill.sh{background:var(--crema2); color:var(--marron)}
+  .more{text-align:center; margin-top:26px; color:var(--texto); font-size:15px}
+
+  /* YOUTUBE FREE */
+  .yt{background:linear-gradient(135deg,#132a1f,#1F4632 60%,#2a5a40); color:#F1EADB; border-radius:28px; padding:54px; display:grid; grid-template-columns:1fr 1.15fr; gap:44px; align-items:center; position:relative; overflow:hidden}
+  .yt::before{content:"الداء والدواء"; font-family:Amiri,serif; position:absolute; right:-20px; bottom:-60px; font-size:190px; color:rgba(255,255,255,.035); white-space:nowrap}
+  .yt h2{color:#fff} .yt .eyebrow{color:var(--oro-claro)}
+  .yt p{color:#D5DCCF; margin-bottom:24px}
+  .yt img{border-radius:14px; box-shadow:0 30px 60px -30px rgba(0,0,0,.7); position:relative}
+  .btn-yt{background:#F5EFE3; color:var(--verde)}
+  .btn-yt:hover{background:#fff}
+
+  /* WHY */
+  .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:44px}
+  .why .card{text-align:left}
+  .why .n{font-family:Lora,serif; font-size:34px; color:var(--oro); line-height:1; margin-bottom:12px}
+
+  /* JOIN */
+  .join{background:var(--marron-noche); color:var(--crema); position:relative; overflow:hidden}
+  .join::before{content:""; position:absolute; inset:0; background:radial-gradient(50% 60% at 20% 30%, rgba(201,160,99,.18), transparent 70%)}
+  .join .wrap{display:grid; grid-template-columns:1fr 440px; gap:60px; align-items:center; position:relative}
+  .join h2{color:#fff} .join .eyebrow{color:var(--oro-claro)}
+  .join .lead{color:#D9CBB6}
+  .join ul{list-style:none; margin-top:22px}
+  .join li{padding-left:30px; position:relative; margin-bottom:10px; color:#E8DCC8}
+  .join li::before{content:"✓"; position:absolute; left:0; color:var(--oro-claro); font-weight:600}
+  form{background:var(--blanco); border-radius:20px; padding:28px; text-align:left; box-shadow:0 30px 60px -30px rgba(0,0,0,.6); color:var(--marron)}
+  form h3{font-size:22px; margin-bottom:4px}
+  form .fs{font-size:13.5px; color:var(--texto); margin-bottom:18px}
   label{display:block; font-size:13px; font-weight:500; margin:0 0 5px}
-  input{
-    width:100%; padding:12px 14px; font:inherit; font-size:15px; color:var(--marron);
-    background:#fff; border:1px solid var(--linea); border-radius:10px; outline:none; margin-bottom:12px;
-  }
-  input:focus{border-color:var(--marron)}
-  button{
-    width:100%; margin-top:4px; padding:14px; font:inherit; font-weight:600; font-size:15px;
-    color:var(--crema); background:var(--marron); border:0; border-radius:999px; cursor:pointer;
-  }
-  button:hover{background:var(--marron-osc)}
-  button:disabled{opacity:.6; cursor:wait}
+  input{width:100%; padding:13px 14px; font:inherit; font-size:15px; color:var(--marron); background:#fff; border:1px solid var(--linea); border-radius:10px; outline:none; margin-bottom:13px}
+  input:focus{border-color:var(--marron); box-shadow:0 0 0 3px rgba(92,61,46,.12)}
+  form button{width:100%; margin-top:4px; padding:15px; font:600 15px Poppins,sans-serif; color:var(--crema); background:var(--marron); border:0; border-radius:999px; cursor:pointer}
+  form button:hover{background:var(--marron-osc)}
+  form button:disabled{opacity:.6; cursor:wait}
   .priv{font-size:11.5px; line-height:1.5; color:var(--suave); text-align:center; margin-top:12px}
   .error{display:none; color:#9A3B2B; font-size:12.5px; margin-top:8px; text-align:center}
 
-  @media (max-width:420px){
-    .logo{width:96px} .marca{margin-bottom:14px}
-    h1{font-size:24px} .sub{font-size:13.5px; margin-bottom:14px}
-    .precio{padding:12px 14px} .precio .grande{font-size:20px}
-    form{padding:16px} input{padding:11px 13px; margin-bottom:10px}
+  /* FAQ */
+  .faq{max-width:760px; margin:40px auto 0}
+  details{border-bottom:1px solid var(--linea); padding:20px 4px}
+  summary{cursor:pointer; list-style:none; font-family:Lora,serif; font-weight:600; font-size:18.5px; display:flex; justify-content:space-between; gap:20px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+"; font-family:Poppins,sans-serif; font-weight:400; font-size:24px; line-height:1; color:var(--oro)}
+  details[open] summary::after{content:"–"}
+  details p{margin-top:10px; color:var(--texto); font-size:15px}
+
+  footer{padding:40px 0 50px; text-align:center; color:var(--suave); font-size:13px; border-top:1px solid var(--linea)}
+  footer img{width:64px; margin:0 auto 10px}
+  footer .redes{display:flex; gap:18px; justify-content:center; margin:10px 0 14px}
+  footer .redes a{color:var(--marron); font-weight:500; text-decoration:none}
+
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s, transform .7s}
+  .reveal.on{opacity:1; transform:none}
+
+
+  .quote .qm{font-family:Lora,serif; font-size:90px; line-height:.6; color:var(--oro); height:40px}
+  .quote .es{font-style:normal!important; font-size:22px!important; line-height:1.5; color:var(--marron)!important; text-align:left!important}
+  .quote .src{text-align:left!important; font-size:13.5px!important}
+  .quote .src b{color:var(--marron); font-size:15px}
+  .quote hr{margin:20px 0!important}
+  .cbooks{display:grid; grid-template-columns:repeat(5,1fr); gap:26px 22px}
+  .cb img{width:100%; aspect-ratio:520/732; object-fit:cover; border-radius:2px 5px 5px 2px; box-shadow:0 18px 26px -14px rgba(43,28,20,.7); margin-bottom:12px; transition:transform .25s}
+  .cb:hover img{transform:translateY(-4px) rotate(-1deg)}
+  .cb h4{font-family:Lora,serif; font-size:15.5px; line-height:1.25; font-weight:600; color:var(--marron)}
+  .cb .ar{display:block; font-size:16px; color:#9A6B3E; margin-top:2px; text-align:left; direction:rtl}
+  .cb .au{font-size:11.5px; color:var(--suave); margin-top:2px}
+  .pace{margin-top:26px; display:flex; gap:20px; align-items:center; justify-content:space-between; background:var(--marron); color:var(--crema); border-radius:18px; padding:22px 28px; font-size:15px}
+  .pace b{color:var(--oro-claro)}
+  .pace .plus{font-family:Lora,serif; font-size:20px; white-space:nowrap; color:#fff}
+  @media (max-width:980px){ .cbooks{grid-template-columns:repeat(3,1fr)} }
+  @media (max-width:640px){ .cbooks{grid-template-columns:repeat(2,1fr); gap:20px 14px} .pace{flex-direction:column; align-items:flex-start; padding:20px} .quote .es{font-size:19px!important} }
+
+  .more-tile .mt{aspect-ratio:520/732; border:2px dashed var(--oro); border-radius:6px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; font-family:Lora,serif; font-size:17px; color:var(--marron); padding:12px; background:var(--crema)}
+  .more-tile .mt span{font-size:48px; line-height:1; color:var(--oro); margin-bottom:6px}
+  /* MOBILE */
+  .mcta{display:none}
+  @media (max-width:980px){
+    .hero .wrap,.what .wrap,.sample,.join .wrap,.yt{grid-template-columns:1fr}
+    .grid4{grid-template-columns:1fr 1fr}
+    .level{grid-template-columns:1fr}
+    .books{grid-template-columns:1fr 1fr}
+    .lv-head{align-items:flex-start}
+    .join .wrap{gap:36px}
+    .hero .wrap{gap:10px}
+    .shelf{order:-1; height:400px}
   }
-  @media (max-width:420px) and (max-height:700px){
-    body{padding:12px 16px}
-    .logo{width:72px; margin-bottom:2px} .marca{margin-bottom:10px}
-    h1{font-size:21px; margin-bottom:6px} .sub{font-size:12.5px; line-height:1.45; margin-bottom:10px}
-    .precio{padding:9px 12px; margin-bottom:9px} .precio .grande{font-size:18px; margin:2px 0}
-    .precio .peq{font-size:11.5px}
-    form{padding:13px} label{font-size:12px; margin-bottom:3px} input{padding:9px 12px; margin-bottom:8px}
-    button{padding:12px} .priv{margin-top:8px; font-size:11px}
+  @media (max-width:640px){
+    section{padding:68px 0}
+    .wrap{padding:0 16px}
+    .brand span{display:none}
+    nav .btn{padding:9px 14px; font-size:13px}
+    .hero{padding:20px 0 30px}
+    .hero h1{font-size:34px}
+    .hero .lead{font-size:16px}
+    .shelf{height:310px}
+    .shelf .bk{width:148px}
+    .b1{transform:translate(-50%,-50%) translateX(-118px) translateY(12px) rotateY(32deg) rotateZ(-2deg) scale(.8)}
+    .b2{transform:translate(-50%,-50%) translateX(-64px) translateY(4px) rotateY(24deg) scale(.9)}
+    .b4{transform:translate(-50%,-50%) translateX(64px) translateY(4px) rotateY(-24deg) scale(.9)}
+    .b5{transform:translate(-50%,-50%) translateX(118px) translateY(12px) rotateY(-32deg) rotateZ(2deg) scale(.8)}
+    .tag{display:none}
+    .strip .dot{display:none} .strip .wrap{flex-direction:column; gap:6px}
+    .grid4,.grid3,.books{grid-template-columns:1fr}
+    .level{padding:22px 18px}
+    .lv-head .num{font-size:44px}
+    .yt{padding:30px 22px; border-radius:22px}
+    .quote{padding:28px 20px} .quote .ar{font-size:24px}
+    form{padding:22px 18px}
+    .hero-ctas .btn{width:100%; justify-content:center}
+    .mcta{display:block; position:fixed; left:12px; right:12px; bottom:12px; z-index:60; transition:transform .3s, opacity .3s}
+    .mcta.hide{transform:translateY(120%); opacity:0}
+    .mcta .btn{width:100%; justify-content:center; box-shadow:0 14px 30px -10px rgba(43,28,20,.7)}
   }
-  @media (max-height:760px) and (min-width:421px){ .logo{width:96px} .sub{margin-bottom:14px} }
+  @media (prefers-reduced-motion:reduce){ .reveal{opacity:1; transform:none; transition:none} html{scroll-behavior:auto} }
 </style>
 </head>
 <body>
-<main>
-  <img class="logo" src="logo.png" alt="شرح الشيوخ">
-  
-  <h1>Únete a la lista de espera</h1>
-  <p class="sub">Déjanos tus datos y te avisaremos en cuanto abramos.</p>
 
-  <form id="f" novalidate>
-    <label for="n">Nombre</label>
-    <input id="n" type="text" name="fields[name]" autocomplete="given-name" required>
-    <label for="e">Correo electrónico</label>
-    <input id="e" type="email" name="fields[email]" autocomplete="email" required>
-    <button type="submit">Unirme a la lista de espera</button>
-    <div class="error" id="err">Escribe tu nombre y un correo válido.</div>
-    <p class="priv">Usaremos tus datos para avisarte de la apertura y, de vez en cuando, enviarte algún recordatorio o beneficio. Puedes darte de baja cuando quieras.</p>
-  </form>
-</main>
+<nav id="nav">
+  <div class="wrap">
+    <a class="brand" href="#">
+      <img src="logo.png" alt="شرح الشيوخ">
+      <span><b>Explicaciones de los Sabios</b>@sharh.shuyuj</span>
+    </a>
+    <a class="btn btn-main" href="#unete">Unirme a la lista</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Series completas · Muy pronto</div>
+      <h1>Las explicaciones de los grandes sabios, <em>completas</em> y en español.</h1>
+      <p class="lead">Los libros clásicos del Islam, explicados de principio a fin por los sabios de Ahl as-Sunna. Con el texto en árabe y la traducción al español, clase a clase.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-main" href="#unete">Únete a la lista de espera →</a>
+        <a class="btn btn-line" href="#curriculum">Ver los libros</a>
+      </div>
+      <div class="proof">
+        <div><i>✓</i>Explicaciones completas</div>
+        <div><i>✓</i>Árabe y español</div>
+        <div><i>✓</i>Muchos libros</div>
+      </div>
+    </div>
+    <div class="shelf" aria-hidden="true">
+      <div class="bk b1"><img src="img/kashf.jpg" alt=""></div>
+      <div class="bk b2"><img src="img/tawhid.jpg" alt=""></div>
+      <div class="bk b3"><img src="img/usul-thalatha.jpg" alt=""></div>
+      <div class="bk b4"><img src="img/qawaid.jpg" alt=""></div>
+      <div class="bk b5"><img src="img/nawaqid.jpg" alt=""></div>
+      <div class="tag t1"><b>Árabe + español</b>frase a frase</div>
+      <div class="tag t2"><span class="ar">الأصول الثلاثة</span><b>Los tres fundamentos</b></div>
+    </div>
+  </div>
+</header>
+
+<div class="strip">
+  <div class="wrap">
+    <span class="lbl">Con las explicaciones de</span>
+    <span class="n">Sheij Ṣāliḥ al-Fawzān</span><span class="dot"></span>
+    <span class="n">Sheij ʿAbd ar-Razzāq al-Badr</span><span class="dot"></span>
+    <span class="n">y otros grandes sabios</span>
+  </div>
+</div>
+
+<!-- QUÉ ES -->
+<section class="what">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">¿De quién aprendes tu religión?</div>
+      <h2>Tu religión merece la fuente más fiable.</h2>
+      <p>Cuando alguien está enfermo, no va a cualquiera: busca al mejor médico, al más especializado. Somos muy selectivos con muchas cosas de la vida. Pero a la hora de aprender nuestra religión, muchas veces escuchamos a cualquiera.</p>
+      <p>En internet hay muchísimas personas hablando de religión, y no siempre sabemos de quién fiarnos. <strong>Aprender de cualquiera es un error</strong>: alguien sin conocimiento puede meterte en la cabeza ideas equivocadas sobre la religión.</p>
+      <p>Por eso existe <strong>شرح الشيوخ</strong> («la explicación de los sabios»): para dar a los hispanohablantes una <strong>fuente fiable</strong> de conocimiento. Traducimos al español las explicaciones completas de los sabios conocidos por seguir el Corán y la Sunna con el entendimiento de los piadosos predecesores.</p>
+    </div>
+    <div class="quote reveal">
+      <div class="qm">“</div>
+      <p class="es">Aprended con los sabios, para conocer el Islam de forma correcta. Los religiosos son muchos, pero los que se aferran a la religión correcta son pocos.</p>
+      <hr>
+      <p class="src"><b>Sheij Ṣāliḥ al-Fawzān</b><br>Muftí general de Arabia Saudí</p>
+    </div>
+  </div>
+</section>
+
+<!-- QUÉ TENDRÁS -->
+<section class="features">
+  <div class="wrap">
+    <div class="center reveal">
+      <div class="eyebrow">Lo que encontrarás dentro</div>
+      <h2>Todo lo que necesitas para estudiar un libro de verdad</h2>
+      <p class="lead">Cada libro es una serie completa: desde la primera clase hasta la última, tal y como la dio el sabio.</p>
+    </div>
+    <div class="grid4">
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V5a2 2 0 0 1 2-2h13v16H6.5A2.5 2.5 0 0 0 4 21.5v-2z"/><path d="M8 7h7M8 11h5"/></svg></div>
+        <h3>Series completas</h3>
+        <p>La explicación entera de cada libro, clase a clase. Nada de resúmenes ni de fragmentos sueltos.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h8M7 3v2M5 5c0 4 3 7 6 8M9 5c0 3-2 6-6 8"/><path d="M13 21l4-10 4 10M14.5 17.5h5"/></svg></div>
+        <h3>Árabe y español</h3>
+        <p>Escuchas al sabio en árabe y lees cada frase en árabe y en español a la vez. Así entiendes todo y, además, aprendes el vocabulario.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></div>
+        <h3>Directamente de los sabios</h3>
+        <p>Sabios de Ahl as-Sunna reconocidos por su conocimiento, no intermediarios. Tú escuchas su explicación, nosotros solo la traducimos.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4v-6H4zM10 20h4V9h-4zM16 20h4V4h-4z"/></svg></div>
+        <h3>Muchos libros</h3>
+        <p>Libros de creencia, hadiz, purificación del corazón y buen carácter. Y cada vez habrá más.</p>
+      </div>
+    </div>
+
+    <div class="sample">
+      <img class="reveal" src="img/muestra-clase.jpg" alt="Ejemplo de una clase: texto en árabe y traducción al español">
+      <div class="reveal">
+        <div class="eyebrow">Así es una clase</div>
+        <h3>Escucha al sabio y entiende cada palabra</h3>
+        <p>El vídeo de la clase, con cada frase del sabio en árabe y su traducción al español debajo, cuidada y fiel.</p>
+        <ul>
+          <li>Traducción revisada frase a frase</li>
+          <li>La explicación completa, sin cortes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRÍCULUM -->
+<section id="curriculum">
+  <div class="wrap">
+    <div class="center reveal">
+      <div class="eyebrow">Los libros</div>
+      <h2>Algunos de los libros que vamos a traducir</h2>
+      <p class="lead">Los libros clásicos que se estudian con los sabios: creencia, hadiz, el corazón y el buen carácter, explicados de principio a fin. Esto es solo el principio: iremos añadiendo muchos más.</p>
+    </div>
+    <div class="levels">
+      <div class="level reveal">
+        <div class="cbooks">
+          <div class="cb"><img src="img/tawhid.jpg" alt="Kitāb at-Tawḥīd"><h4>Kitāb at-Tawḥīd</h4><span class="ar">كتاب التوحيد</span><div class="au">Muḥammad ibn ʿAbd al-Wahhāb</div></div>
+          <div class="cb"><img src="img/usul-thalatha.jpg" alt="Los tres fundamentos"><h4>Los tres fundamentos</h4><span class="ar">الأصول الثلاثة</span><div class="au">Muḥammad ibn ʿAbd al-Wahhāb</div></div>
+          <div class="cb"><img src="img/riyad.jpg" alt="Riyāḍ aṣ-Ṣāliḥīn"><h4>Riyāḍ aṣ-Ṣāliḥīn</h4><span class="ar">رياض الصالحين</span><div class="au">An-Nawawī</div></div>
+          <div class="cb"><img src="img/daa.jpg" alt="La enfermedad y la cura"><h4>La enfermedad y la cura</h4><span class="ar">الداء والدواء</span><div class="au">Ibn al-Qayyim</div></div>
+          <div class="cb"><img src="img/arbain.jpg" alt="Los cuarenta hadices"><h4>Los cuarenta hadices</h4><span class="ar">الأربعون النووية</span><div class="au">An-Nawawī</div></div>
+          <div class="cb"><img src="img/adab.jpg" alt="Al-Adab al-Mufrad"><h4>Al-Adab al-Mufrad</h4><span class="ar">الأدب المفرد</span><div class="au">Al-Bujārī</div></div>
+          <div class="cb"><img src="img/qawaid.jpg" alt="Las cuatro reglas"><h4>Las cuatro reglas</h4><span class="ar">القواعد الأربع</span><div class="au">Muḥammad ibn ʿAbd al-Wahhāb</div></div>
+          <div class="cb"><img src="img/wabil.jpg" alt="Al-Wābil aṣ-Ṣayyib"><h4>Al-Wābil aṣ-Ṣayyib</h4><span class="ar">الوابل الصيب</span><div class="au">Ibn al-Qayyim</div></div>
+          <div class="cb"><img src="img/nawaqid.jpg" alt="Los anuladores del Islam"><h4>Los anuladores del Islam</h4><span class="ar">نواقض الإسلام</span><div class="au">Muḥammad ibn ʿAbd al-Wahhāb</div></div>
+          <div class="cb"><img src="img/kabair.jpg" alt="Los pecados mayores"><h4>Los pecados mayores</h4><span class="ar">الكبائر</span><div class="au">Adh-Dhahabī</div></div>
+          <div class="cb"><img src="img/fawaid.jpg" alt="Al-Fawāʾid"><h4>Al-Fawāʾid</h4><span class="ar">الفوائد</span><div class="au">Ibn al-Qayyim</div></div>
+          <div class="cb"><img src="img/bulugh-real.jpg" alt="Bulūgh al-Marām"><h4>Bulūgh al-Marām</h4><span class="ar">بلوغ المرام</span><div class="au">Ibn Ḥajar</div></div>
+          <div class="cb"><img src="img/kashf.jpg" alt="Despejar las dudas"><h4>Despejar las dudas</h4><span class="ar">كشف الشبهات</span><div class="au">Muḥammad ibn ʿAbd al-Wahhāb</div></div>
+          <div class="cb"><img src="img/wasitiyya.jpg" alt="Al-Wāsiṭiyya"><h4>Al-Wāsiṭiyya</h4><span class="ar">العقيدة الواسطية</span><div class="au">Ibn Taymiyya</div></div>
+          <div class="cb"><img src="img/usul-sunna-real.jpg" alt="Los fundamentos de la Sunna"><h4>Los fundamentos de la Sunna</h4><span class="ar">أصول السنة</span><div class="au">Imam Aḥmad</div></div>
+          <div class="cb"><img src="img/barbahari-real.jpg" alt="Sharḥ as-Sunna"><h4>Sharḥ as-Sunna</h4><span class="ar">شرح السنة</span><div class="au">Al-Barbahārī</div></div>
+          <div class="cb"><img src="img/lamiyya-real.jpg" alt="Al-Lāmiyya"><h4>Al-Lāmiyya</h4><span class="ar">لامية شيخ الإسلام</span><div class="au">Ibn Taymiyya</div></div>
+          <div class="cb"><img src="img/wasail.jpg" alt="Los medios para una vida feliz"><h4>Los medios para una vida feliz</h4><span class="ar">الوسائل المفيدة</span><div class="au">As-Saʿdī</div></div>
+          <div class="cb"><img src="img/durus.jpg" alt="Las lecciones importantes"><h4>Las lecciones importantes</h4><span class="ar">الدروس المهمة</span><div class="au">Ibn Bāz</div></div>
+          <div class="cb more-tile"><div class="mt"><span>+</span>Muchos más libros</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="pace reveal">
+      <div><b>A tu propio ritmo.</b> Todas las clases de cada libro, para verlas cuando quieras.</div>
+      <div class="plus">Y muchos más en camino</div>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUÉ -->
+<section class="why" style="padding-top:20px">
+  <div class="wrap">
+    <div class="center reveal">
+      <div class="eyebrow">¿Por qué la lista de espera?</div>
+      <h2>Estamos preparando las series completas</h2>
+      <p class="lead">Muy pronto abriremos el acceso a las series completas de todos los libros. Apúntate a la lista y serás de los primeros en entrar.</p>
+    </div>
+    <div class="grid3">
+      <div class="card reveal"><div class="n">01</div><h3>Te avisamos primero</h3><p>Recibirás un correo el día que abramos, antes de anunciarlo en ningún otro sitio.</p></div>
+      <div class="card reveal"><div class="n">02</div><h3>Precio de fundador</h3><p>Quienes estén en la lista tendrán un precio especial de fundador. Os lo contaremos por correo unos días antes de abrir.</p></div>
+      <div class="card reveal"><div class="n">03</div><h3>Sin compromiso</h3><p>Apuntarte es gratis y no te obliga a nada. Puedes darte de baja cuando quieras.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ÚNETE -->
+<section class="join" id="unete">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Lista de espera</div>
+      <h2>Estudia los libros de los sabios, de principio a fin, en español.</h2>
+      <p class="lead">Déjanos tu nombre y tu correo y te avisaremos en cuanto abramos.</p>
+      <ul>
+        <li>Aviso de apertura antes que nadie</li>
+        <li>Precio especial de fundador</li>
+        <li>Sin spam: solo lo importante</li>
+      </ul>
+    </div>
+    <form class="ml reveal" novalidate>
+      <h3>Únete a la lista de espera</h3>
+      <p class="fs">Gratis y sin compromiso.</p>
+      <label for="n">Nombre</label>
+      <input id="n" type="text" name="fields[name]" autocomplete="given-name" required>
+      <label for="e">Correo electrónico</label>
+      <input id="e" type="email" name="fields[email]" autocomplete="email" required>
+      <button type="submit">Unirme a la lista de espera</button>
+      <div class="error">Escribe tu nombre y un correo válido.</div>
+      <p class="priv">Usaremos tus datos para avisarte de la apertura y, de vez en cuando, enviarte algún recordatorio o beneficio. Puedes darte de baja cuando quieras.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap">
+    <div class="center reveal">
+      <div class="eyebrow">Preguntas frecuentes</div>
+      <h2>Dudas</h2>
+    </div>
+    <div class="faq">
+      <details><summary>¿Tiene coste?</summary><p>En nuestro canal de YouTube habrá mucho contenido gratis. Pero las series completas de los libros, para quien se lo quiera tomar más en serio y estudiar, estarán en Patreon y sí serán de pago. Anunciaremos el precio por correo a la lista de espera unos días antes de abrir, junto con el precio especial de fundador.</p></details>
+      <details><summary>¿Necesito saber árabe?</summary><p>No. Todas las clases tienen la traducción al español de cada frase. El árabe aparece al lado para quien quiera seguirlo o ir aprendiéndolo.</p></details>
+      <details><summary>¿Cuándo abrís?</summary><p>Muy pronto, in shā’ Allāh. Quienes estén en la lista de espera recibirán la fecha por correo antes que nadie.</p></details>
+      
+    </div>
+  </div>
+</section>
+
+<footer>
+  <img src="logo.png" alt="شرح الشيوخ">
+  <div><bdi>شرح الشيوخ</bdi> · Explicaciones de los Sabios</div>
+  <div>@sharh.shuyuj</div>
+</footer>
+
+<div class="mcta" id="mcta"><a class="btn btn-main" href="#unete">Únete a la lista de espera</a></div>
 
 <script>
-  // 👉 Sustituye esta URL por la de tu formulario de MailerLite
   const MAILERLITE_ACTION = "https://assets.mailerlite.com/jsonp/2764572/forms/205109460729857368/subscribe";
 
-  const f = document.getElementById('f'), err = document.getElementById('err');
-  f.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const name = f.elements['fields[name]'].value.trim();
-    const email = f.elements['fields[email]'].value.trim();
-    if (!name || !/^\S+@\S+\.\S+$/.test(email)) { err.style.display = 'block'; return; }
-    err.style.display = 'none';
-    const btn = f.querySelector('button'); btn.disabled = true; btn.textContent = 'Enviando…';
-    const data = new FormData();
-    data.append('fields[name]', name);
-    data.append('fields[email]', email);
-    data.append('ml-submit', '1');
-    data.append('anticsrf', 'true');
-    try { await fetch(MAILERLITE_ACTION, { method: 'POST', body: data, mode: 'no-cors' }); } catch (_) {}
-    location.href = 'gracias.html';
+  document.querySelectorAll('form.ml').forEach(f => {
+    const err = f.querySelector('.error');
+    f.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = f.elements['fields[name]'].value.trim();
+      const email = f.elements['fields[email]'].value.trim();
+      if (!name || !/^\S+@\S+\.\S+$/.test(email)) { err.style.display = 'block'; return; }
+      err.style.display = 'none';
+      const btn = f.querySelector('button'); btn.disabled = true; btn.textContent = 'Enviando…';
+      const data = new FormData();
+      data.append('fields[name]', name);
+      data.append('fields[email]', email);
+      data.append('ml-submit', '1');
+      data.append('anticsrf', 'true');
+      try { await fetch(MAILERLITE_ACTION, { method: 'POST', body: data, mode: 'no-cors' }); } catch (_) {}
+      location.href = 'gracias.html';
+    });
   });
+
+  // nav border + mobile CTA
+  const nav = document.getElementById('nav'), mcta = document.getElementById('mcta'), join = document.getElementById('unete');
+  const onScroll = () => {
+    nav.classList.toggle('scrolled', scrollY > 10);
+    const r = join.getBoundingClientRect();
+    mcta.classList.toggle('hide', scrollY < 400 || (r.top < innerHeight && r.bottom > 0));
+  };
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  // reveal on scroll
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add('on'); io.unobserve(x.target); } }), {threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  } else document.querySelectorAll('.reveal').forEach(el => el.classList.add('on'));
 </script>
 </body>
 </html>
