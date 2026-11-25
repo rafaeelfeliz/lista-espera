@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>شرح الشيوخ · Lista de espera</title>
+<meta name="description" content="Series completas con la explicación de los libros clásicos del Islam, en español. Únete a la lista de espera.">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --crema:#F5EFE3; --marron:#5C3D2E; --marron-osc:#47301F;
+    --suave:#8A7A6A; --texto:#6E5546; --linea:#E2D6C2; --blanco:#FFFDF9; --tarjeta:#EFE5D3;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--crema); color:var(--marron);
+    font-family:Poppins,system-ui,sans-serif;
+    min-height:100vh; min-height:100dvh;
+    display:flex; align-items:center; justify-content:center;
+    padding:20px 18px;
+  }
+  main{width:100%; max-width:440px; text-align:center}
+  .logo{width:130px; height:auto; display:block; margin:0 auto 18px}
+  .marca{font-size:10.5px; letter-spacing:.22em; text-transform:uppercase; color:var(--suave); margin-bottom:18px}
+  h1{font-family:Lora,Georgia,serif; font-weight:600; font-size:32px; line-height:1.2; margin-bottom:8px}
+  .sub{font-size:15px; line-height:1.55; color:var(--texto); margin-bottom:22px}
+
+  .precio{background:var(--tarjeta); border:1px solid var(--linea); border-radius:14px; padding:14px 18px; margin-bottom:12px}
+  .precio .et{font-size:10.5px; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:#9A7B5C}
+  .precio .grande{font-family:Lora,Georgia,serif; font-weight:600; font-size:22px; margin:4px 0 2px}
+  .precio .peq{font-size:12.5px; color:var(--texto)}
+
+  form{background:var(--blanco); border:1px solid var(--linea); border-radius:14px; padding:18px; text-align:left;
+       box-shadow:0 10px 30px -18px rgba(92,61,46,.35)}
+  label{display:block; font-size:13px; font-weight:500; margin:0 0 5px}
+  input{
+    width:100%; padding:12px 14px; font:inherit; font-size:15px; color:var(--marron);
+    background:#fff; border:1px solid var(--linea); border-radius:10px; outline:none; margin-bottom:12px;
+  }
+  input:focus{border-color:var(--marron)}
+  button{
+    width:100%; margin-top:4px; padding:14px; font:inherit; font-weight:600; font-size:15px;
+    color:var(--crema); background:var(--marron); border:0; border-radius:999px; cursor:pointer;
+  }
+  button:hover{background:var(--marron-osc)}
+  button:disabled{opacity:.6; cursor:wait}
+  .priv{font-size:11.5px; line-height:1.5; color:var(--suave); text-align:center; margin-top:12px}
+  .error{display:none; color:#9A3B2B; font-size:12.5px; margin-top:8px; text-align:center}
+
+  @media (max-width:420px){
+    .logo{width:96px} .marca{margin-bottom:14px}
+    h1{font-size:24px} .sub{font-size:13.5px; margin-bottom:14px}
+    .precio{padding:12px 14px} .precio .grande{font-size:20px}
+    form{padding:16px} input{padding:11px 13px; margin-bottom:10px}
+  }
+  @media (max-width:420px) and (max-height:700px){
+    body{padding:12px 16px}
+    .logo{width:72px; margin-bottom:2px} .marca{margin-bottom:10px}
+    h1{font-size:21px; margin-bottom:6px} .sub{font-size:12.5px; line-height:1.45; margin-bottom:10px}
+    .precio{padding:9px 12px; margin-bottom:9px} .precio .grande{font-size:18px; margin:2px 0}
+    .precio .peq{font-size:11.5px}
+    form{padding:13px} label{font-size:12px; margin-bottom:3px} input{padding:9px 12px; margin-bottom:8px}
+    button{padding:12px} .priv{margin-top:8px; font-size:11px}
+  }
+  @media (max-height:760px) and (min-width:421px){ .logo{width:96px} .sub{margin-bottom:14px} }
+</style>
+</head>
+<body>
+<main>
+  <img class="logo" src="logo.png" alt="شرح الشيوخ">
+  
+  <h1>Únete a la lista de espera</h1>
+  <p class="sub">Déjanos tus datos y te avisaremos en cuanto abramos.</p>
+
+  <form id="f" novalidate>
+    <label for="n">Nombre</label>
+    <input id="n" type="text" name="fields[name]" autocomplete="given-name" required>
+    <label for="e">Correo electrónico</label>
+    <input id="e" type="email" name="fields[email]" autocomplete="email" required>
+    <button type="submit">Unirme a la lista de espera</button>
+    <div class="error" id="err">Escribe tu nombre y un correo válido.</div>
+    <p class="priv">Usaremos tus datos para avisarte de la apertura y, de vez en cuando, enviarte algún recordatorio o beneficio. Puedes darte de baja cuando quieras.</p>
+  </form>
+</main>
+
+<script>
+  // 👉 Sustituye esta URL por la de tu formulario de MailerLite
+  const MAILERLITE_ACTION = "https://assets.mailerlite.com/jsonp/ACCOUNT_ID/forms/FORM_ID/subscribe";
+
+  const f = document.getElementById('f'), err = document.getElementById('err');
+  f.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = f.elements['fields[name]'].value.trim();
+    const email = f.elements['fields[email]'].value.trim();
+    if (!name || !/^\S+@\S+\.\S+$/.test(email)) { err.style.display = 'block'; return; }
+    err.style.display = 'none';
+    const btn = f.querySelector('button'); btn.disabled = true; btn.textContent = 'Enviando…';
+    const data = new FormData();
+    data.append('fields[name]', name);
+    data.append('fields[email]', email);
+    data.append('ml-submit', '1');
+    data.append('anticsrf', 'true');
+    try { await fetch(MAILERLITE_ACTION, { method: 'POST', body: data, mode: 'no-cors' }); } catch (_) {}
+    location.href = 'gracias.html';
+  });
+</script>
+</body>
+</html>
